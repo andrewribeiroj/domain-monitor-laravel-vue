@@ -21,7 +21,6 @@ class NameserverController extends Controller
       public function store(Request $request){
         $nameserver = new Nameserver;
         $nameserver->name = $request->input('name');
-        $nameserver->createdAt = $request->input('created_at');
     
         if( $nameserver->save() ){
           return new NameserverResource( $nameserver );
@@ -31,7 +30,6 @@ class NameserverController extends Controller
        public function update(Request $request){
         $nameserver = Nameserver::findOrFail( $request->id );
         $nameserver->name = $request->input('name');
-        $nameserver->createdAt = $request->input('created_at');
     
         if( $nameserver->save() ){
           return new NameserverResource( $nameserver );

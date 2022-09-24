@@ -12,6 +12,8 @@ class Domain extends JsonResource
       'id' => $this->id,
       'mongoId' => $this->mongoId,
       'domain' => $this->domain,
+      'registrationDate' => $this->registrationDate,
+      'expirationDate' => $this->expirationDate,
       'available' => $this->available,
       'backordered' => $this->backordered
     ];

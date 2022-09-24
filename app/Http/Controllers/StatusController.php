@@ -21,7 +21,6 @@ class StatusController extends Controller
       public function store(Request $request){
         $status = new Status;
         $status->name = $request->input('name');
-        $status->createdAt = $request->input('created_at');
     
         if( $status->save() ){
           return new StatusResource( $status );
@@ -31,7 +30,6 @@ class StatusController extends Controller
        public function update(Request $request){
         $status = Status::findOrFail( $request->id );
         $status->name = $request->input('name');
-        $status->createdAt = $request->input('created_at');
     
         if( $status->save() ){
           return new StatusResource( $status );

@@ -22,6 +22,8 @@ class DomainController extends Controller {
     $domain = new Domain;
     $domain->mongoId = $request->input('mongoId');
     $domain->domain = $request->input('domain');
+    $domain->registrationDate = $request->input('registrationDate');
+    $domain->expirationDate = $request->input('expirationDate');
     $domain->available = $request->input('available');
     $domain->backordered = $request->input('backordered');
 

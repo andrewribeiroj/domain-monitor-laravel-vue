@@ -17,6 +17,8 @@ class CreateDomainsTable extends Migration
             $table->id();
             $table->string('mongoId');
             $table->string('domain');
+            $table->date('registrationDate');
+            $table->date('expirationDate');
             $table->boolean('available');
             $table->date('availableAt')->nullable();
             $table->boolean('backordered');

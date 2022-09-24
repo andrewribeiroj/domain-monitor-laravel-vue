@@ -20,8 +20,8 @@ class Domain_StatusController extends Controller
     
       public function store(Request $request){
         $domain_status = new Domain_Status;
-        $domain_status->name = $request->input('name');
-        $domain_status->createdAt = $request->input('created_at');
+        $domain_status->domain_id = $request->input('domain_id');
+        $domain_status->status_id = $request->input('status_id');
     
         if( $domain_status->save() ){
           return new Domain_StatusResource( $domain_status );
@@ -30,8 +30,8 @@ class Domain_StatusController extends Controller
     
        public function update(Request $request){
         $domain_status = Domain_Status::findOrFail( $request->id );
-        $domain_status->name = $request->input('name');
-        $domain_status->createdAt = $request->input('created_at');
+        $domain_status->domain_id = $request->input('domain_id');
+        $domain_status->status_id = $request->input('status_id');
     
         if( $domain_status->save() ){
           return new Domain_StatusResource( $domain_status );
