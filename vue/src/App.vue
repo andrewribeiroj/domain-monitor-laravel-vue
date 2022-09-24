@@ -8,7 +8,9 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <router-view></router-view>
+  <Suspense>
+    <router-view></router-view>
+  </Suspense>
 </template>
 
 <style scoped>

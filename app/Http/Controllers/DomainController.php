@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class DomainController extends Controller {
 
   public function index(){
-    $domains = Domain::paginate(15);
+    $domains = Domain::all()->sortByDesc('created_at');
     return DomainResource::collection($domains);
   }
 

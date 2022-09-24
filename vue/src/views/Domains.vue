@@ -1,10 +1,34 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <PageComponent title="Domains">
-      <div class="h-96 rounded-lg border-4 border-dashed border-gray-200" />
+    <div class="h-96 rounded-lg border-4 border-dashed border-gray-200">
+
+      <div class="mt-10">
+        <div class="px-4 sm:px-8 max-w-5xl m-auto">
+          <h1 class="text-center font-semibold text-sm">All domains</h1>
+          <p class="mt-2 text-center text-xs mb-4 text-gray-500">Full list of added domains to the API</p>
+          <ul class="border border-gray-200 rounded overflow-hidden shadow-md">
+            <li v-for="item in domains.data" :key="item.value"
+              class="px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out">
+              {{ item.domain }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </PageComponent>
 </template>
 
 <script setup>
 import PageComponent from '../components/PageComponent.vue';
+import axios from 'axios';
+
+const domains = await axios.get('http://localhost:8000/api/domains')
+  .then(response => response.data)
+  .catch(err => console.log(err))
+
+</script>
+
+<script>
 </script>

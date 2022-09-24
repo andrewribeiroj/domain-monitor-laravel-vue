@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Resources;
+
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Domain extends JsonResource {
-  public function toArray($request){
-    //return parent::toArray($request);
+class Domain extends JsonResource
+{
+  public function toArray($request)
+  {
     return [
       'id' => $this->id,
       'mongoId' => $this->mongoId,
