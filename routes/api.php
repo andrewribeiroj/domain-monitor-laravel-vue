@@ -5,10 +5,12 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\Domain_StatusController;
 use App\Http\Controllers\NameserverController;
 use App\Http\Controllers\Domain_NameserverController;
+use App\Http\Controllers\JoinDomainDataController;
 
 // DOMAINS //
 
 Route::get('domains', [DomainController::class, 'index']);
+Route::get('domains/alphabetic', [DomainController::class, 'alphabetic']);
 Route::get('domain/{id}', [DomainController::class, 'show']);
 Route::post('domain', [DomainController::class, 'store']);
 Route::put('domain/{id}', [DomainController::class, 'update']);
@@ -45,3 +47,8 @@ Route::get('domain_nameserver/{id}', [Domain_NameserverController::class, 'show'
 Route::post('domain_nameserver', [Domain_NameserverController::class, 'store']);
 Route::put('domain_nameserver/{id}', [Domain_NameserverController::class, 'update']);
 Route::delete('domain_nameserver/{id}', [Domain_NameserverController::class,'destroy']);
+
+// JOIN DOMAIN DATA //
+
+Route::get('join_domain_data', [JoinDomainDataController::class, 'index']);
+Route::get('join_domain_data/{id}', [JoinDomainDataController::class, 'show']);

@@ -10,6 +10,7 @@ class Domain_Status extends JsonResource
     {
         return [
             'id' => $this->id,
+            'type' => $this->type,
             'domainId' => $this->domain_id,
             'statusId' => $this->status_id,
             'createdAt' => $this->created_at

@@ -13,6 +13,11 @@ class DomainController extends Controller {
     return DomainResource::collection($domains);
   }
 
+  public function alphabetic(){
+    $domains = Domain::all()->sortBy('domain');
+    return DomainResource::collection($domains);
+  }
+
   public function show($id){
     $domain = Domain::findOrFail( $id );
     return new DomainResource( $domain );

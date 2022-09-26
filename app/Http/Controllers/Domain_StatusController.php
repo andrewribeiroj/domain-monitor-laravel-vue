@@ -20,6 +20,7 @@ class Domain_StatusController extends Controller
     
       public function store(Request $request){
         $domain_status = new Domain_Status;
+        $domain_status->type = $request->input('type');
         $domain_status->domain_id = $request->input('domain_id');
         $domain_status->status_id = $request->input('status_id');
     
@@ -30,6 +31,7 @@ class Domain_StatusController extends Controller
     
        public function update(Request $request){
         $domain_status = Domain_Status::findOrFail( $request->id );
+        $domain_status->type = $request->input('type');
         $domain_status->domain_id = $request->input('domain_id');
         $domain_status->status_id = $request->input('status_id');
     
