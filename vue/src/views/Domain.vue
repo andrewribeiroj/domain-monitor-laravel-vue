@@ -12,16 +12,16 @@
                             <!-- Vote Counts -->
                             <div class="grid grid-rows-2">
                                 <div class="inline-block font-medium text-xl">
-                                    0
+                                    0 Alerts
                                 </div>
 
                                 <div class="inline-block font-medium text-sm">
-                                    Alerts
+                                    Locked
                                 </div>
                             </div>
 
                             <!-- Answer Counts -->
-                            <a href="#"
+                            <a v-if="item.nameserver.header_status === 'NOERROR'" href="#"
                                 class="grid grid-rows-2 mx-auto mb-3 py-1 w-4/5 2lg:w-3/5 rounded-md bg-green-400">
                                 <div class="inline-block font-medium text-2xl text-white">
                                     DNS
@@ -31,11 +31,21 @@
                                     Connected
                                 </div>
                             </a>
+                            <a v-else href="#"
+                                class="grid grid-rows-2 mx-auto mb-3 py-1 w-4/5 2lg:w-3/5 rounded-md bg-red-400">
+                                <div class="inline-block font-medium text-2xl text-white">
+                                    DNS
+                                </div>
+
+                                <div class="inline-block font-medium text-white mx-1 text-sm lg:text-md">
+                                    Refused
+                                </div>
+                            </a>
 
                             <!-- View Counts -->
                             <div class="grid my-3">
                                 <span class="inline-block font-bold text-xs">
-                                    Locked
+                                    {{ item.nameserver.header_status }}
                                 </span>
                             </div>
                         </div>
@@ -48,7 +58,7 @@
                                         <div class="inline-block font-light capitalize">
                                             <i class="uil uil-arrow-circle-up mr-1"></i>
                                             <span class="text-sm">
-                                                0 Alerts
+                                                0 Alerts - Locked
                                             </span>
                                         </div>
                                     </div>
@@ -119,28 +129,28 @@
                             text-xs font-bold 
                             mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 
                             opacity-90 hover:opacity-100">
-                                        Caching
+                                        Tag
                                     </a>
                                     <a href="#" class="inline-block rounded-full text-white 
                             bg-yellow-400 hover:bg-yellow-500 duration-300 
                             text-xs font-bold 
                             mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 
                             opacity-90 hover:opacity-100">
-                                        RabbitMQ
+                                        Tag
                                     </a>
                                     <a href="#" class="inline-block rounded-full text-white 
                             bg-green-400 hover:bg-green-500 duration-300 
                             text-xs font-bold 
                             mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 
                             opacity-90 hover:opacity-100">
-                                        Memcached
+                                        Tag
                                     </a>
                                     <a href="#" class="inline-block rounded-full text-white 
                             bg-blue-400 hover:bg-blue-500 duration-300 
                             text-xs font-bold 
                             mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 
                             opacity-90 hover:opacity-100">
-                                        Redis
+                                        Tag
                                     </a>
                                 </div>
                             </div>
