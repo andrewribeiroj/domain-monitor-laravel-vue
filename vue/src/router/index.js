@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import DefaultLayout from '../components/DefaultLayout.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Domains from '../views/Domains.vue'
 import Domain from '../views/Domain.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import NotFound from '../views/404.vue'
+import DefaultLayout from '../components/DefaultLayout.vue'
+
 
 
 const routes = [

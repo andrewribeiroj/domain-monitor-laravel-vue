@@ -166,13 +166,13 @@
 <script setup>
 import PageComponent from '../components/PageComponent.vue';
 import { useRoute } from 'vue-router';
-import axios from 'axios';
+import axiosClient from '../axios';
 import { off } from 'process';
 
 const route = useRoute()
 //console.log(route.params)
 
-const domains = await axios.get(`http://localhost:8000/api/join_domain_data/${route.params.id}`)
+const domains = await axiosClient.get(`join_domain_data/${route.params.id}`)
     .then(response => response.data)
     .catch(err => console.log(err))
 

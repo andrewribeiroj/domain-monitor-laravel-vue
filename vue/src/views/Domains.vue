@@ -24,9 +24,9 @@
 
 <script setup>
 import PageComponent from '../components/PageComponent.vue';
-import axios from 'axios';
+import axiosClient from '../axios';
 
-const domains = await axios.get('http://localhost:8000/api/domains')
+const domains = await axiosClient.get('domains')
   .then(response => response.data)
   .catch(err => console.log(err))
 
