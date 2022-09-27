@@ -18,7 +18,7 @@ class CreatePersonalAccessTokensTable extends Migration
             $table->morphs('tokenable');
             $table->string('name', 64);
             $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
+            $table->string('abilities', 64)->nullable();
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
         });
