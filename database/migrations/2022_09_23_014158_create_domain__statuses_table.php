@@ -17,10 +17,10 @@ class CreateDomainStatusesTable extends Migration
     {
         Schema::create('domain__statuses', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->string('domain_id');
+            $table->string('type', 64);
+            $table->string('domain_id', 64);
             $table->foreignIdFor(Status::class, 'status_id');
-            $table->string('header_status')->nullable();
+            $table->string('header_status', 64)->nullable();
             $table->timestamps();
         });
     }

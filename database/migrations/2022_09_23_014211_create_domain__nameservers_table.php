@@ -17,10 +17,10 @@ class CreateDomainNameserversTable extends Migration
     {
         Schema::create('domain__nameservers', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->string('domain_id');
+            $table->string('type', 64);
+            $table->string('domain_id', 64);
             $table->foreignIdFor(Nameserver::class, 'nameserver_id');
-            $table->string('header_status')->nullable();
+            $table->string('header_status', 64)->nullable();
             $table->timestamps();
         });
     }

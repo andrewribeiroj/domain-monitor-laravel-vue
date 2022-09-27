@@ -15,8 +15,8 @@ class CreateDomainsTable extends Migration
     {
         Schema::create('domains', function (Blueprint $table) {
             $table->id();
-            $table->string('mongoId');
-            $table->string('domain');
+            $table->string('mongoId', 64);
+            $table->string('domain', 64);
             $table->date('registrationDate');
             $table->date('expirationDate');
             $table->boolean('available');
